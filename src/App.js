@@ -2,12 +2,14 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Company from './components/Company';
-import Post from './components/Post';
+import PostFetching from './components/postFile/PostFetching';
+import Bs from './components/Bs'
 
 const server = process.env.REACT_APP_SERVER_URL;
 
 
 function App() {
+  //object fetching
   const [company, setCompany] = useState({});
 
   useEffect(() => {
@@ -30,36 +32,17 @@ function App() {
     fetchCompany();
   }, [])
 
-  // const [post, setPost] = useState({});
-
-  // useEffect(() => {
-  //   const fetchPost = async () => {
-  //     const response = await axios.get(`${server}/posts`);
-  //     console.log(response, "this is res");
-  //     const data = response.data;
-  //     console.log(data);
-  //     // //name,author and greeting
-  //     // // destructuring
-  //     // console.log(data);
-  //     // const { title, description, date } = data;
-  //     // setPost({
-  //     //   title,
-  //     //   description,
-  //     //   date
-  //     // });
-  //     setPost();
-
-  //   }
-  //   fetchPost();
-  // }, [])
-
 
   return (
+    <div>
+      <Routes>
+        <Route path="/" element={<Company company={company} />} />
+        <Route exact path="/bs" element={<Bs />} />
+        <Route exact path="/posts" element={<PostFetching />} />
+      </Routes>
+      <h1>hdllo</h1>
 
-    <Routes>
-      <Route exact path="/" element={<Company company={company} />} />
-      {/* <Route exact path="/posts" element={<Post post={post} />} /> */}
-    </Routes>
+    </div>
 
 
 
