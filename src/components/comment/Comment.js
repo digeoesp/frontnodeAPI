@@ -6,7 +6,7 @@ const Comment = (props) => {
             <p>name: {name}</p>
             <p>last name: {lastName}</p>
             <p>Age: {age}</p>
-            <p>Date: {date}</p>
+            <p>Date: {new Date(date).toDateString()}</p>
         </div>
     );
 };
