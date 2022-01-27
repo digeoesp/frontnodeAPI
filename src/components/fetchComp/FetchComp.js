@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import Company from './Company';
 const server = process.env.REACT_APP_SERVER_URL;
 
-
 const FetchComp = () => {
     const [company, setCompany] = useState({});
     useEffect(() => {
