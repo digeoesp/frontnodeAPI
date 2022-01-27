@@ -1,11 +1,11 @@
 const Post = (props) => {
-    const { id, title, description, date } = props.post;
-
+    const { _id, title, description, date } = props.post;
+    // console.log(_id)
 
     return (
         <div>
             <ul>
-                <li>Name: {id}</li>
+                <li>id: {_id}</li>
                 <li>Name: {title}</li>
                 <li>Greeting: {description}</li>
                 <li>Author: {date}</li>

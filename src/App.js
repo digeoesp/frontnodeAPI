@@ -15,12 +15,12 @@ function App() {
   useEffect(() => {
     const fetchCompany = async () => {
       const response = await axios.get(server);
-      console.log(response, "this is response");
+      // console.log(response, "this is response");
       const data = response.data;
-      console.log(data);
+      // console.log(data);
       //name,author and greeting
       // destructuring
-      console.log(data);
+      // console.log(data);
       const { name, author, greeting } = data;
       setCompany({
         name,
