@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const Post = (props) => {
     const { _id, title, description, date } = props.post;
     return (

@@ -11,9 +11,11 @@ const CreatePost = () => {
             title,
             description,
         };
-        console.log(title)
-        console.log(description)
-        axios.post(`${server}/posts`, newPost)
+        try {
+            const res = await axios.post(`${server}/posts`, newPost)
+            window.location.replace(`/posts`)
+
+        } catch (err) { }
     };
     return (
         <div className="write">

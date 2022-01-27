@@ -7,6 +7,7 @@ const server = process.env.REACT_APP_SERVER_URL;
 const PostFetching = () => {
     const [posts, setPost] = useState([]);
     console.log(posts)
+
     useEffect(() => {
         const fetchPost = async () => {
             const response = await axios.get(`${server}/posts`);
