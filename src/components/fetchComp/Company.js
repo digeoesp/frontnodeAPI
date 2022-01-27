@@ -1,4 +1,3 @@
-
 const Company = (props) => {
     const { name, greeting, author } = props.company;
 

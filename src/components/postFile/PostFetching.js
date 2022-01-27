@@ -1,37 +1,26 @@
 import axios from 'axios';
-import { Routes, Route } from 'react-router-dom';
-
 import { useState, useEffect } from 'react';
 import Post from './Post'
-const server = process.env.REACT_APP_SERVER_URL;
-const array = [1, 1, 1, 1, 11, 2, 2, 3, 4]
 
+const server = process.env.REACT_APP_SERVER_URL;
 
 const PostFetching = () => {
-    const [posts, setPost] = useState({});
+    const [posts, setPost] = useState([]);
+    console.log(posts)
     useEffect(() => {
         const fetchPost = async () => {
             const response = await axios.get(`${server}/posts`);
             const data = response.data;
-            setPost(...data);
-            // const { _id, title, description, date } = data;
-            // setPost({
-            //     _id,
-            //     title,
-            //     description,
-            //     date
-            // });
+            setPost(data);
         }
-        fetchPost(posts);
+        fetchPost();
     }, [])
-    const postList = array.map((post) => {
-        return <Post post={post} />
+    const postList = posts.map((post, index) => {
+        return <Post post={post} key={index} />
     });
-    console.log(postList, "this is postlist")
     return (
         <div>
             {postList}
-            {/* <Post post={posts} /> */}
         </div>
     );
 };
