@@ -7,6 +7,7 @@ import CreatePost from './components/createPost/CreatePost';
 function App() {
   return (
     <div>
+
       <Routes>
         <Route path="/" element={<FetchComp />} />
         <Route path="/posts" element={<PostFetching />} />
@@ -16,5 +17,6 @@ function App() {
     </div>
   );
 }
+//////////////////////////xs/xs 
 
 export default App;
